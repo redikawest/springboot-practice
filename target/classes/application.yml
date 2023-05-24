@@ -9,6 +9,10 @@ cloud:
 server:
     port: 8070
 
+logging:
+  level:
+    '[com.example.practice]' : DEBUG
+
 # spring:
 #   datasource:
 #     driver-class-name: com.mysql.cj.jdbc.Driver
