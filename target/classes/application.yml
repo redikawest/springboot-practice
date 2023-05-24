@@ -1,0 +1,40 @@
+app:
+    currency: IDR
+    timezone: Asia/Jakarta
+    welcome-text: Hello World from Tedy, are you ready ? this is from properties
+
+cloud:
+    api-key: ${CLOUD_KEY}
+
+server:
+    port: 8070
+
+# spring:
+#   datasource:
+#     driver-class-name: com.mysql.cj.jdbc.Driver
+#     url: jdbc:mysql://localhost:3306/springboot
+#     username: root
+#     password: root
+
+#   jpa:
+#     hibernate:
+#       ddl-auto: update
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile:
+      - cobain
+      
+app:
+    currency: IDR
+    timezone: Asia/Jakarta
+    welcome-text: Hello World from Tedy, are you ready ? this is from properties
+
+cloud:
+    api-key: ${CLOUD_KEY}
+
+server:
+    port: 8090
