@@ -2,35 +2,35 @@
   "groups": [
     {
       "name": "app",
-      "type": "com.example.practice.catalog.config.ApplicationProperties",
-      "sourceType": "com.example.practice.catalog.config.ApplicationProperties"
+      "type": "com.example.practice.config.ApplicationProperties",
+      "sourceType": "com.example.practice.config.ApplicationProperties"
     },
     {
       "name": "cloud",
-      "type": "com.example.practice.catalog.config.CloudProperties",
-      "sourceType": "com.example.practice.catalog.config.CloudProperties"
+      "type": "com.example.practice.config.CloudProperties",
+      "sourceType": "com.example.practice.config.CloudProperties"
     }
   ],
   "properties": [
     {
       "name": "app.currency",
       "type": "java.lang.String",
-      "sourceType": "com.example.practice.catalog.config.ApplicationProperties"
+      "sourceType": "com.example.practice.config.ApplicationProperties"
     },
     {
       "name": "app.timezone",
       "type": "java.lang.String",
-      "sourceType": "com.example.practice.catalog.config.ApplicationProperties"
+      "sourceType": "com.example.practice.config.ApplicationProperties"
     },
     {
       "name": "app.welcome-text",
       "type": "java.lang.String",
-      "sourceType": "com.example.practice.catalog.config.ApplicationProperties"
+      "sourceType": "com.example.practice.config.ApplicationProperties"
     },
     {
       "name": "cloud.api-key",
       "type": "java.lang.String",
-      "sourceType": "com.example.practice.catalog.config.CloudProperties"
+      "sourceType": "com.example.practice.config.CloudProperties"
     }
   ],
   "hints": []

@@ -1,9 +1,9 @@
-package com.example.practice.catalog.logic;
+package com.example.practice.service.logic;
 
 import org.springframework.stereotype.Service;
-import com.example.practice.catalog.Interface.GreetingServiceInterface;
-import com.example.practice.catalog.config.ApplicationProperties;
-import com.example.practice.catalog.config.CloudProperties;
+import com.example.practice.service.interfaces.GreetingServiceInterface;
+import com.example.practice.config.ApplicationProperties;
+import com.example.practice.config.CloudProperties;
 
 
 @Service

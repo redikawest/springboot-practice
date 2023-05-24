@@ -2,8 +2,7 @@ package com.example.practice.web;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.example.practice.catalog.logic.GreetingService;
+import com.example.practice.service.logic.GreetingService;
 
 @RestController
 public class HelloResources {

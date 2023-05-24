@@ -1,4 +1,4 @@
-package com.example.practice.catalog.Interface;
+package com.example.practice.service.interfaces;
 
 public interface GreetingServiceInterface 
 {
