@@ -19,4 +19,19 @@ public class PracticeApplication {
 	// 	return "Hello From Spring Boot";
 	// }
 
+	/**
+	 * 
+	 * Note.
+	 * @AllArgsConstructor itu sama saja seperti constructor
+	 * 
+	 */
+	
+
+	/*
+	 * 
+	 * Thymeleaf
+	 * Java template engine for spring mvc and security
+	 * 
+	 */
+
 }

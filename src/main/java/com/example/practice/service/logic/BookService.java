@@ -1,5 +1,9 @@
 package com.example.practice.service.logic;
 
+import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
 import org.springframework.stereotype.Service;
 
 import com.example.practice.domain.Book;
@@ -25,5 +29,20 @@ public class BookService implements BookServiceInterface
         dto.setBookDescription(book.getDescription());
         return dto;
     }
+
+    @Override
+    public List<BookDetailDTO> findBookListDetail() {
+        List<Book> books = bookLogic.findAll();
+        return books.stream().map((b) -> {
+            BookDetailDTO dto = new BookDetailDTO();
+            dto.setAuthorName(b.getAuthor().getName());
+            dto.setBookDescription(b.getDescription());
+            dto.setBookId(b.getId());
+            dto.setBookTitle(b.getTitle());
+            return dto;
+        }).collect(Collectors.toList());
+    }
+
+    
     
 }

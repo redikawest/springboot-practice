@@ -1,5 +1,7 @@
 package com.example.practice.repository.logic;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import com.example.practice.domain.Book;
@@ -18,5 +20,13 @@ public class BookRepository implements BookInterface
         Book book = bookMap.get(id);
 		return book;
     }
+
+    @Override
+    public List<Book> findAll() {
+        List<Book> bookList = new ArrayList<Book>(bookMap.values());
+        return bookList;
+    }
+
+    
     
 }
