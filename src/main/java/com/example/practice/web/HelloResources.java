@@ -2,8 +2,11 @@ package com.example.practice.web;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.example.practice.dto.HelloMessageResponseDTO;
 import com.example.practice.service.logic.GreetingService;
 
 @RestController
@@ -18,7 +21,7 @@ public class HelloResources {
     }
  
     @GetMapping("/hello")
-    public String helloWorld() {
+    public ResponseEntity<HelloMessageResponseDTO> helloWorld() {
         
         log.trace("this is Log TRACE");
         log.debug("this is log DEBUG");
@@ -26,6 +29,8 @@ public class HelloResources {
         log.warn("this is log WARN");
         log.error("this is log ERROR");
 
-        return greetingService.sayGreeting();
+        HelloMessageResponseDTO dto = new HelloMessageResponseDTO();
+        dto.setMessage(greetingService.sayGreeting());
+        return ResponseEntity.ok().body(dto);
     }
 }
