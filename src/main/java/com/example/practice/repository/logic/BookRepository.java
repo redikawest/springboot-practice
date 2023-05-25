@@ -27,6 +27,14 @@ public class BookRepository implements BookInterface
         return bookList;
     }
 
+    @Override
+    public void save(Book book) {
+        int size = bookMap.size();
+        book.setId((long) size+1);
+        bookMap.put(book.getId(), book);
+        
+    }
+
     
     
 }

@@ -6,7 +6,9 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
+import com.example.practice.domain.Author;
 import com.example.practice.domain.Book;
+import com.example.practice.dto.BookCreateDTO;
 import com.example.practice.dto.BookDetailDTO;
 import com.example.practice.repository.logic.BookRepository;
 import com.example.practice.service.interfaces.BookServiceInterface;
@@ -41,6 +43,19 @@ public class BookService implements BookServiceInterface
             dto.setBookTitle(b.getTitle());
             return dto;
         }).collect(Collectors.toList());
+    }
+
+    @Override
+    public void createNewBook(BookCreateDTO dto) {
+        Author author = new Author(null, null, null);
+        author.setName(dto.getAuthorName());
+
+        Book book = new Book();
+        book.setAuthor(author);
+        book.setTitle(dto.getBookTitle());
+        book.setDescription(dto.getDescription());
+
+        bookLogic.save(book);
     }
 
     

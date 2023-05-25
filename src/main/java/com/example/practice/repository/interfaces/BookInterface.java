@@ -9,4 +9,6 @@ public interface BookInterface {
     public Book findBookById(Long id);
 
     public List<Book> findAll();
+
+    public void save(Book book);
 }
