@@ -11,4 +11,8 @@ public interface BookInterface {
     public List<Book> findAll();
 
     public void save(Book book);
+
+    public void update(Book book);
+
+    public void delete(Long bookId);
 }

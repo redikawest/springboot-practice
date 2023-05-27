@@ -10,6 +10,7 @@ import com.example.practice.domain.Author;
 import com.example.practice.domain.Book;
 import com.example.practice.dto.BookCreateDTO;
 import com.example.practice.dto.BookDetailDTO;
+import com.example.practice.dto.BookUpdateRequestDTO;
 import com.example.practice.repository.logic.BookRepository;
 import com.example.practice.service.interfaces.BookServiceInterface;
 
@@ -58,6 +59,20 @@ public class BookService implements BookServiceInterface
         bookLogic.save(book);
     }
 
+    @Override
+    public void updateBook(Long bookId, BookUpdateRequestDTO dto) {
+        Book book = bookLogic.findBookById(bookId);
+        book.setTitle(dto.getBookTitle());
+        book.setDescription(dto.getDescription());
+
+        bookLogic.update(book);
+    }
+
+    @Override
+    public void deleteBook(Long bookId) {
+        bookLogic.delete(bookId);
+    }
+    
     
     
 }
