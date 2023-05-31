@@ -26,7 +26,8 @@ public class Author
     @Column(name = "author_name", nullable = false, columnDefinition = "varchar(300)")
     private String name;
 
+    // if use MySql, change type data to date in database
     @Column(name = "birth_date", nullable = false)
-    private String birthDate;
+    private LocalDate birthDate;
 
 }

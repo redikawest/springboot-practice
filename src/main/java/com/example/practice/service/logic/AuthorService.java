@@ -1,8 +1,11 @@
 package com.example.practice.service.logic;
 
+import java.time.LocalDate;
+
 import org.springframework.stereotype.Service;
 
 import com.example.practice.domain.Author;
+import com.example.practice.dto.AuthorCreateRequestDTO;
 import com.example.practice.dto.AuthorResponseDTO;
 import com.example.practice.exception.BadRequestException;
 import com.example.practice.repository.logic.AuthorRepository;
@@ -23,8 +26,20 @@ public class AuthorService implements AuthorServiceInterface
         
         AuthorResponseDTO dto = new AuthorResponseDTO();
         dto.setAuthorName(author.getName());
-        dto.setBirthDate(author.getBirthDate());
+        dto.setBirthDate(author.getBirthDate().toEpochDay());
         return dto;
     }
+
+    @Override
+    public void createNewAuthor(AuthorCreateRequestDTO dto) {
+
+        Author author = new Author();
+        author.setName(dto.getAuthorName());
+        author.setBirthDate(LocalDate.ofEpochDay(dto.getBirthDate()));
+
+        authorRepository.save(author);
+    }
+
+    
     
 }
